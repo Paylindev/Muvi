@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
+.primeiro-container {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.primeiro-container p {
+  color: #f3f3f3;
+  font-size: 1.5rem;
+
+  text-align: center;
+}
+
+.card {
+  margin: 10px;
+}
+
+
+h1 {
+  background: #990000;
+  background: linear-gradient(to top, #990000 0%, #FF0000 100%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .textos {
+    width: 90vw;
+  }
+}
+
+.quote {
+  width: 100%;
+  height: 30vh;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  text-align: center;
+  background-image: url(../IMAGES/SobreNos/quote-image.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  color: #f3f3f3;
+}
+
+.quote-autor {
+  font-size: 2rem;
+  color: #f3f3f3;
+}
+
+.texts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+.texts-container {
+  width: 300px;
+  height: 200px;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  background-color: #171717;
+  margin: 10px;
+  border-radius: 2px;
+
+  padding: 2%;
+}
+
+.texts-container p {
+  position: relative;
+  color: #f3f3f3;
+  z-index: 10;
+}
+
+.texts-container img {
+  z-index: 10;
+  margin-bottom: 10px;
+}
+
+.texts-container::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 180%;
+  background: linear-gradient(#FFF, #FF0000);
+  animation: animate 4s linear infinite;
+}
+
+.texts-container::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background-color: #0e0e0e;
+  border-radius: 2px;
+}
+
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

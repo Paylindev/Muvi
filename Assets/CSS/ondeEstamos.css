@@ -1,0 +1,27 @@
+body {
+    background-color: #000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.responsive-h2 {
+    margin-top: 10px;
+    text-align: center;
+
+    background: #990000;
+    background: linear-gradient(to top, #990000 0%, #FF0000 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+iframe {
+    margin-top: 20px;
+    width: 90vw;
+    height: 60vh;
+}
