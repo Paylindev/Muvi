@@ -23,9 +23,30 @@ body {
 }
 
 input[type=search] {
+    border: 0px;
     outline: none;
     padding: 10px;
     width: 50%;
+    margin: 0px 0px 20px 0px;
+    border-radius: 2px;
+}
+
+.searchButton {
+    outline: none;
+    border: none;
+    width: 50%;
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
+
+    background-color: #FF0000;
+    color: #f3f3f3;
+
+    transition: 300ms;
+}
+
+.searchButton:hover {
+    background-color: #990000;
+    color: #f3f3f3;
 }
 
 .lobby {
@@ -84,10 +105,15 @@ input[type=search] {
 }
 
 .movie {
-    border: 1px solid #ccc;
+    background-color: #171717;
+    border: 1px solid #171717;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .movie img {
@@ -102,10 +128,12 @@ input[type=search] {
 }
 
 .actions button {
-    background-color: #007bff;
+    background-color: #ff0000;
     color: #fff;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+
+    margin: 10px;
 }
