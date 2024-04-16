@@ -1,0 +1,28 @@
+* {
+    font-family: "Saira", sans-serif;
+}
+
+/* Barra de navegação da página principal */
+.navbar-toggler {
+    border-radius: 2px;
+    background: #990000;
+    /* background: linear-gradient(to top, #990000 0%, #FF0000 100%); */
+    background-clip: border-box;
+}
+
+.nav-color {
+    background-color: #000;
+}
+
+.nav-link {
+    color: #f5f5f5;
+    transition: 300ms;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+.material-symbols-outlined {
+    font-size: xx-large;
+}
