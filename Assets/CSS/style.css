@@ -15,48 +15,8 @@ main {
     color: #f5f5f5;
 }
 
-.link-login {
-    color: #f5f5f5;
-    margin-top: 5px;
-}
+/* Index: Home do usuário (não cadastrado/sem login) */
 
-.buttons-main {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.info-main, .gif-main {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-
-    width: 50%;
-}
-
-.gif-main {
-    width: 50%;
-
-    background-position: center;
-    background-size: cover;
-
-    transition: 2s ease;
-}
-
-.gradiente {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-}
-
-
-/* Informações do Main com botões */
 .title-h1 {
     background: #990000;
     background: linear-gradient(to top, #990000 0%, #FF0000 100%);
@@ -66,6 +26,15 @@ main {
 
     font-size: 96px;
     margin-bottom: -5px;
+}
+
+.buttons-main {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .button-cadastro {
@@ -96,7 +65,38 @@ main {
     color: #f3f3f3;
 }
 
-/* Fim do conteúdo principal - Main */
+.link-login {
+    color: #f5f5f5;
+    margin-top: 5px;
+}
+
+.info-main, .gif-main {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+    width: 50%;
+}
+
+/* Carrossel de imagens: utilizado em Index e Login */
+
+.gif-main {
+    width: 50%;
+
+    background-position: center;
+    background-size: cover;
+
+    transition: 2s ease;
+}
+
+.gradiente {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
 
 /* Responsividade */
 @media (max-width: 768px) {

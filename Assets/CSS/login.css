@@ -36,8 +36,9 @@ main {
     background-position: center;
     background-size: cover;
 
-    transition: 2s ease;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
 }
 
 .gradiente {
@@ -86,4 +87,14 @@ main {
 .btn-primary,
 .form-check-label {
     border-radius: 2px;
+}
+
+.confirmar-login {
+    background-color: #990000;
+    border: 0;
+}
+
+.confirmar-login:hover {
+    background-color: #ff0000;
+    border: 0;
 }

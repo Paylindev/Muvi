@@ -8,22 +8,13 @@ body {
   background-image: url(https://s-media-cache-ak0.pinimg.com/originals/96/18/6b/96186b308addc3c4700a26adb3aac278.gif);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-
-  height: 93vh;
+  height: 100vh;
 }
 
 .container {
   width: 820px;
   height: auto;
-  margin: 2rem auto;
+  margin: 10rem auto;
   padding: 1rem;
 
   background: rgba(23, 23, 23, 0.73);
@@ -42,36 +33,52 @@ main {
   text-align: center;
 }
 
+/* Cadastro: Formulário */
+
 form {
   border-radius: 2px;
   color: #f3f3f3;
 }
 
+.confirmar-cadastro {
+  background-color: #990000;
+  border: 0px;
+  border-radius: 2px;
+}
+
+.confirmar-cadastro:hover {
+  background-color: #FF0000;
+}
+
+.form-control, .form-label, .input-group-text, .form-check-input {
+  border-radius: 2px;
+}
+
+/* Cadastro: Responsividade */
+
 @media screen and (max-width: 700px) {
+
+  body {
+    height: 140vh;
+  }
+
   .col {
     flex: 1 1 50%;
   }
 
   .container {
-    width: 300px;
-  }
-
-  main {
-    height: 140vh;
+    margin: 2rem auto;
+    width: 400px;
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
   .col {
     flex: 1 1 50%;
   }
 
-  main {
-    height: 140vh;
-  }
-
   .container {
-    margin: 0rem;
-    width: 250px;
+    margin: 2rem auto;
+    width: 270px;
   }
 }

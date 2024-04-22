@@ -3,10 +3,11 @@
 }
 
 /* Barra de navegação da página principal */
+/* Menu Hambúrguer */
 .navbar-toggler {
     border-radius: 2px;
     background: #990000;
-    background: linear-gradient(to top, #990000 0%, #FF0000 100%);
+    /* background: linear-gradient(to top, #990000 0%, #FF0000 100%); */
     background-clip: border-box;
 }
 
@@ -27,4 +28,3 @@
     font-size: xx-large;
 }
 
-/* Menu Hambúrguer */

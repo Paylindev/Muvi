@@ -60,8 +60,8 @@ async function searchMovies() {
                 <p>Gênero: ${movieGenres}</p>
                 <img src="${moviePoster}" alt="${movieTitle}">
                 <div class="actions">
-                    <button onclick="onclick="adicionarALista('${movie.id}', '${movie.title}')"">Adicionar à lista</button>
-                    <button onclick="favoritar()">Favoritar</button>
+                    <button onclick="adicionarALista()"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-280v-80h560v80H120Zm80-160v-80h560v80H200Zm80-160v-80h560v80H280Z"/></svg></button>
+                    <button onclick="favoritar()"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg></button>
                 </div>
             `;
             // Adiciona o elemento do filme ao elemento de resultados
@@ -73,25 +73,7 @@ async function searchMovies() {
     }
 }
 
-// Função para adicionar um filme à lista de filmes favoritos
-function adicionarALista(movieId, movieTitle) {
-    // Obtém a lista de filmes favoritos do localStorage (se existir)
-    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+async function adicionarALista() {
 
-    // Verifica se o filme já está na lista de favoritos
-    const filmeJaAdicionado = favoritos.some(favorito => favorito.id === movieId);
 
-    // Se o filme não estiver na lista de favoritos, adiciona-o
-    if (!filmeJaAdicionado) {
-        favoritos.push({ id: movieId, title: movieTitle });
-        // Salva a lista de favoritos no localStorage
-        localStorage.setItem('favoritos', JSON.stringify(favoritos));
-
-        // Exibe uma mensagem de confirmação
-        alert('Filme adicionado à lista de favoritos!');
-    } else {
-        // Se o filme já estiver na lista de favoritos, exibe uma mensagem de erro
-        alert('Este filme já está na lista de favoritos!');
-    }
 }
-

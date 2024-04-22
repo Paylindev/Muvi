@@ -28,7 +28,7 @@
   <nav class="navbar navbar-expand-lg nav-color">
 
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.html">
         <img src="./Assets/IMAGES/icon/M.svg" alt="Bootstrap" width="50" height="34">
       </a>
 
@@ -44,105 +44,118 @@
           <a class="nav-link" href="ondeEstamos.html">Onde Estamos</a>
           <a class="nav-link" href="cadastro.html">Cadastro</a>
           <a class="nav-link" href="login.html">Login</a>
+          <a class="nav-link" href="minhaLista.html">User area</a>
         </div>
       </div>
     </div>
   </nav>
   <!-- Fim da navegação -->
 
-  <main>
-    <div class="container">
-      <h2 class="title-h2">Cadastro</h2>
+  <!-- Cadastro: formulário-->
+  <div class="container">
+    <h2 class="title-h2">Cadastro</h2>
 
-      <form class="row g-3 needs-validation" novalidate>
-        <!-- Primeiro Nome -->
-        <div class="col-md-4">
-          <label for="validationCustom01" class="form-label">Primeiro nome</label>
-          <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+    <form class="row g-3 needs-validation" novalidate>
+      <!-- Cadastro: Primeiro Nome -->
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Primeiro nome</label>
+        <input type="text" class="form-control" id="validationCustom01" required>
+        <div class="valid-feedback">
+          Perfeito!
+        </div>
+        <div class="invalid-feedback">
+          Por favor, insira um primeiro nome.
+        </div>
+      </div>
+
+      <!-- Cadastro: Segundo Nome -->
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Último nome</label>
+        <input type="text" class="form-control" id="validationCustom02" required>
+        <div class="valid-feedback">
+          Perfeito!
+        </div>
+        <div class="invalid-feedback">
+          Por favor, insira um segundo nome.
+        </div>
+      </div>
+
+      <!-- Cadastro: Nome do usuário -->
+      <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label">Apelido</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+            required>
           <div class="valid-feedback">
-            Perfeito!
+            Parece um ótimo apelido!
+          </div>
+          <div class="invalid-feedback">
+            Por favor, escolha um apelido.
           </div>
         </div>
+      </div>
 
-        <!-- Segundo Nome -->
-        <div class="col-md-4">
-          <label for="validationCustom02" class="form-label">Último nome</label>
-          <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-          <div class="valid-feedback">
-            Perfeito!
+      <!-- Cadastro: Email -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email </label>
+          <input type="email" class="form-control" id="email" placeholder="email@exemplo.com" onblur="validaEmail()"
+            required>
+        </div>
+      </div>
+
+      <!-- Cadastro: Data de nascimento -->
+      <div class="col-md-6">
+        <label for="exampleFormControlInput1" class="form-label">Data de nascimento</label>
+        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="email@example.com" required>
+      </div>
+
+      <!-- Cadastro: Termos e confirmar -->
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label" for="invalidCheck">
+            Concordo com termos e condições.
+          </label>
+          <div class="invalid-feedback">
+            Você precisa concordar com os termos e condições para continuar.
           </div>
         </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary confirmar-cadastro" type="submit">Cadastrar</button>
+      </div>
+    </form>
 
-        <!-- Username Nome -->
-        <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">Apelido</label>
-          <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-              required>
-            <div class="invalid-feedback">
-              Por favor, escolha um apelido.
-            </div>
-          </div>
-        </div>
+    <script>
+      (() => {
+        'use strict'
 
-        <!-- Email -->
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email </label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
-              required>
-          </div>
-        </div>
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
 
-        <!-- Data de nascimento -->
-        <div class="col-md-6">
-          <label for="exampleFormControlInput1" class="form-label">Data de nascimento</label>
-          <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
-        </div>
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
 
-        <!-- Termos e confirmar -->
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-              Concordo com termos e condições.
-            </label>
-            <div class="invalid-feedback">
-              Você precisa concordar com os termos e condições para continuar.
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Confirmar</button>
-        </div>
-      </form>
-  </main>
+            form.classList.add('was-validated')
+          }, false)
+        })
+      })()
 
-  <script>
-    (() => {
-      'use strict'
-
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      const forms = document.querySelectorAll('.needs-validation')
-
-      // Loop over them and prevent submission
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+      var email = validaEmail();
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+      </script>
+    <script src="./Assets/JS/form.js"></script>
+
 </body>
 
 </html>

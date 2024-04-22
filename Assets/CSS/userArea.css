@@ -1,0 +1,25 @@
+#minhaLista, #favoritos {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.filme-minhalista, .filme-favoritos {
+    margin: 10px;
+}
+
+.filme-minhalista img, .filme-favoritos img {
+    width: 200px;
+    height: 280px;
+    border: 2px solid #f3f3f3;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 350ms;
+}
+
+.filme-minhalista img:hover, .filme-favoritos img:hover {
+    border: 2px solid #ff0000;
+}

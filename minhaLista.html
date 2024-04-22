@@ -7,12 +7,16 @@
 
     <link rel="shortcut icon" href="./Assets/IMAGES/icon/M.svg" type="image/x-icon">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+        crossorigin="anonymous"
+    >
 
     <link rel="stylesheet" href="./Assets/CSS/userDesign.css">
     <link rel="stylesheet" href="./Assets/CSS/usernav.css">
-    <link rel="stylesheet" href="./Assets/CSS/minhaLista.css">
+    <link rel="stylesheet" href="./Assets/CSS/userArea.css">
 
     <!-- Fonte do projeto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,13 +27,13 @@
 
     <title>Muvi · Minha Lista</title>
 </head>
-
+    
 <body>
     <!-- Navegação -->
     <nav class="navbar navbar-expand-lg nav-color">
 
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="./Assets/IMAGES/icon/M.svg" alt="Bootstrap" width="50" height="34">
             </a>
 
@@ -48,9 +52,53 @@
         </div>
     </nav>
 
+    <!-- Container com os filmes da Lista do usuário-->
     <div class="container">
         <h1 class="responsive-h2">Minha Lista</h1>
-        <div id="minhaLista"></div>
+        <!-- Lista dos filmes (onde serão armazenados os filmes) -->
+        <div id="minhaLista">
+            <div class="filme-minhalista">
+                <img src="./Assets/IMAGES/filme/esposadementirinha.jpg" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://br.web.img3.acsta.net/pictures/210/527/21052756_20131024195513383.jpg" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/3/30/Star_Wars_Epis%C3%B3dio_1_Amea%C3%A7a_Fantasma.jpg" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/3/33/Chamber_of_Secrets.jpg" alt="">
+            </div>
+
+            <div class="filme-minhalista">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/0/0e/Scream-5.png" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://media.fstatic.com/MnC2D9OCzzqIMhf6E8BVclVk2uc=/322x478/smart/filters:format(webp)/media/movies/covers/2022/12/MV5BZjYxNWM3MjMtNmFhYi00MDliLTg2MjAtZWU0ODhmMmNlNTYyXkEyXkFqcGdeQ_gqa3jGG.jpeg" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/4/46/Pearl_2022.jpg" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://br.web.img2.acsta.net/pictures/14/08/11/21/32/336680.jpg" alt="">
+            </div>
+
+            <div class="filme-minhalista">
+                <img src="https://media.fstatic.com/rAhPZT0F0BC01O6LSVpLb0_lA9s=/322x478/smart/filters:format(webp)/media/movies/covers/2018/08/A_Bruxa_de_Blair_1999.jpg" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://musicart.xboxlive.com/7/7c3b3c00-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/f/fa/Barbie_Fairytopia_Mermaidia.jpg" alt="">
+            </div>
+            <div class="filme-minhalista">
+                <img src="https://br.web.img2.acsta.net/pictures/23/05/08/10/29/0695770.jpg" alt="">
+            </div>
+        </div>
     </div>
 
 
@@ -58,47 +106,6 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
         crossorigin="anonymous">
-    </script>
-    <script>
-        // Função para exibir a lista de filmes favoritos
-function exibirFavoritos() {
-    // Obtém a lista de filmes favoritos do localStorage
-    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-
-    // Seleciona o elemento HTML onde os resultados serão exibidos
-    const resultsDiv = document.getElementById('results');
-    // Limpa quaisquer resultados anteriores
-    resultsDiv.innerHTML = '';
-
-    // Verifica se há filmes favoritos na lista
-    if (favoritos && favoritos.length > 0) {
-        // Itera sobre cada filme favorito
-        favoritos.forEach(favorito => {
-            // Obtém o título do filme
-            const movieTitle = favorito.title;
-
-            // Cria um elemento HTML para exibir as informações do filme
-            const movieElement = document.createElement('div');
-            movieElement.classList.add('movie');
-            movieElement.innerHTML = `
-                <h2>${movieTitle}</h2>
-                <div class="actions">
-                    <button onclick="removerDoFavoritos('${favorito.id}')"">Remover da lista</button>
-                </div>
-            `;
-            // Adiciona o elemento do filme ao elemento de resultados
-            resultsDiv.appendChild(movieElement);
-        });
-    } else {
-        // Se não houver filmes favoritos, exibe uma mensagem indicando isso
-        resultsDiv.innerHTML = '<p>Nenhum filme favorito encontrado</p>';
-    }
-}   
-
-// Chama a função exibirFavoritos no carregamento da página
-window.onload = function() {
-    exibirFavoritos();
-};
     </script>
 </body>
 
